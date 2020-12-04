@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+	<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+	<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+  </head>
+  <title>Easy ui</title>
+  <body>
+    <table
+      id="dg"
+      title="Item Sales Report"
+      class="easyui-datagrid"
+      style="width: 650px; height: 250px"
+      url="get_info.php"
+      toolbar="#toolbar"
+      rownumbers="true"
+      fitColumns="true"
+      singleSelect="true"
+    >
+      <thead>
+        <tr>
+          <th field="date" width="50">Date</th>
+          <th field="rct" width="20">Rct</th>
+          <th field="description" width="50">Description</th>
+          <th field="quantity" width="35">Quantity</th>
+          <th field="unit_price" width="50">Unit Price</th>
+          <th field="total_amount" width="55">Total Amount</th>
+          <th field="vat" width="40">Vat(18%)</th>
+
+
+        </tr>
+      </thead>
+     
+    </table>
+    <div id="pp" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;width: 650px;"
+    data-options="total:13,pageSize:10">
+</div>
+    <div id="toolbar">
+        <br />
+       Date From: <input id="dd" type="text" class="easyui-datebox">
+       To: <input id="dd" type="text" class="easyui-datebox">
+       <a id="btn" href="#" class="easyui-linkbutton" >Search</a>
+
+       <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-print'">Print Report</a>
+       <br />
+       <br />
+
+        <a
+        href="#"
+        class="easyui-linkbutton"
+        iconCls="icon-edit"
+       
+        onclick="editUser()"
+        >View/Update</a
+      >
+      <a
+        href="#"
+        class="easyui-linkbutton"
+        iconCls="icon-add"
+        >New Item</a
+      >
+     
+      <a
+        href="#"
+        class="easyui-linkbutton"
+        iconCls="icon-remove"
+        >Delete</a
+      >
+     Search: <input class="easyui-textbox"  style="width:250px">
+     <br />
+     <br />
+
+    </div>
+    <div id="dlg" class="easyui-dialog" style="width:400px" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+		<form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+			<h3>Edit</h3>
+			<div style="margin-bottom:10px">
+				<input name="rct" class="easyui-textbox" required="true" label="Rct.:" style="width:100%">
+			</div>
+			<div style="margin-bottom:10px">
+				<input name="description" class="easyui-textbox" required="true" label="Description:" style="width:100%">
+			</div>
+			<div style="margin-bottom:10px">
+				<input name="quantity" class="easyui-textbox" required="true" label="Quantity:" style="width:100%">
+			</div>
+			<div style="margin-bottom:10px">
+				<input name="unit_price" class="easyui-textbox" required="true"  label="Quantity:" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+				<input name="total_amount" class="easyui-textbox" required="true"  label="Total Amount:" style="width:100%">
+			</div>
+			<div style="margin-bottom:10px">
+				<input name="vat" class="easyui-textbox" required="true"  label="Vat:" style="width:100%">
+			</div>
+
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
+    </div>
+    <script type="text/javascript">
+		var url;
+		function editUser(){
+			var row = $('#dg').datagrid('getSelected');
+			if (row){
+				$('#dlg').dialog('open').dialog('center').dialog('setTitle','Edit User');
+				$('#fm').form('load',row);
+				url = 'update_user.php?id='+row.id;
+			}
+        }
+        function saveUser(){
+			$('#fm').form('submit',{
+				url: url,
+				onSubmit: function(){
+					return $(this).form('validate');
+				},
+				success: function(result){
+					var result = eval('('+result+')');
+					if (result.errorMsg){
+						$.messager.show({
+							title: 'Error',
+							msg: result.errorMsg
+						});
+					} else {
+						$('#dlg').dialog('close');		
+						$('#dg').datagrid('reload');	
+					}
+				}
+			});
+		}
+    </script>
+  </body>
+</html>

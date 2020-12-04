@@ -1,0 +1,121 @@
+{
+    "sales_report": [
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "1",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "10",
+            "unit_price" : 15000,
+            "total_amount" : 150000,
+            "vat" : 22881
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Soup of the day",
+            "quantity" : "1",
+            "unit_price" : 8000,
+            "total_amount" : 8000,
+            "vat" : 1220
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Ugandan Coffee",
+            "quantity" : "1",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "fruit juice",
+            "quantity" : "3",
+            "unit_price" : 6000,
+            "total_amount" : 18000,
+            "vat" : 2276
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "furit juice ",
+            "quantity" : "1",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "3",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "coffee",
+            "quantity" : "3",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "dean",
+            "quantity" : "3",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "1",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "10",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "1",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        },
+        {
+            "Date" : "2015-11-20",
+            "Rct." : "1",
+            "Description" : "Entre",
+            "quantity" : "1",
+            "unit_price" : 15000,
+            "total_amount" : 15000,
+            "vat" : 2288
+        }
+    ]}
+    
